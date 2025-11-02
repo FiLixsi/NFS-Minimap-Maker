@@ -16,28 +16,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Includes\Nikki\Modules\**" />
-    <Compile Remove="Includes\Nikki\Nikki\bin\**" />
-    <Compile Remove="Includes\Nikki\Nikki\obj\**" />
-    <EmbeddedResource Remove="Includes\Nikki\Modules\**" />
-    <EmbeddedResource Remove="Includes\Nikki\Nikki\bin\**" />
-    <EmbeddedResource Remove="Includes\Nikki\Nikki\obj\**" />
-    <None Remove="Includes\Nikki\Modules\**" />
-    <None Remove="Includes\Nikki\Nikki\bin\**" />
-    <None Remove="Includes\Nikki\Nikki\obj\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Properties\NFSMinimapMaker.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Properties\texconv.exe" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Includes\Nikki\Nikki.sln" />
-    <None Include="Includes\Nikki\Nikki\Nikki.csproj" />
   </ItemGroup>
 
   <ItemGroup>
