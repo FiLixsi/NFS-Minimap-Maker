@@ -2,7 +2,7 @@
 Making life easier for modders, you no longer need to spend 5 or even 20 minutes creating a single minimap.  
 Although the program is small, it makes your work much easier, especially manual work.  
 
-### Includes:
+### Features:
 * Supports sizes from 1024 to 8192.
 * Support Games: Only NFS Most Wanted.
 * Defined minimap name.
