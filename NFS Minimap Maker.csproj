@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
+    <RootNamespace>NFS_Minimap_Maker</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <ApplicationIcon>Properties\NFSMinimapMaker.ico</ApplicationIcon>
+    <Nullable>disable</Nullable>
+    <PackageIcon></PackageIcon>
+    <Authors>FiLixsi</Authors>
+    <Version>1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Includes\Nikki\Modules\**" />
+    <Compile Remove="Includes\Nikki\Nikki\bin\**" />
+    <Compile Remove="Includes\Nikki\Nikki\obj\**" />
+    <EmbeddedResource Remove="Includes\Nikki\Modules\**" />
+    <EmbeddedResource Remove="Includes\Nikki\Nikki\bin\**" />
+    <EmbeddedResource Remove="Includes\Nikki\Nikki\obj\**" />
+    <None Remove="Includes\Nikki\Modules\**" />
+    <None Remove="Includes\Nikki\Nikki\bin\**" />
+    <None Remove="Includes\Nikki\Nikki\obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\NFSMinimapMaker.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\texconv.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Includes\Nikki\Nikki.sln" />
+    <None Include="Includes\Nikki\Nikki\Nikki.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pfim" Version="0.10.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+  <ItemGroup>
+    <None Update="NFSMinimapMaker.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(ProjectDir)$(MSBuildProjectName)\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <Company />
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <Target Name="CleanAfterBuild" AfterTargets="Build">
+    <RemoveDir Directories="$(ProjectDir)bin" />
+  </Target>
+
+</Project>
